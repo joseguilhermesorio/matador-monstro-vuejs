@@ -99,3 +99,20 @@ html {
 .buttons .desistir {
     background-color: #020f1a;
 }
+
+
+/*RESULTS*/
+
+.logs .player-log {
+    background-color: rgb(5, 103, 168);
+    color: #FFF;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.logs .monster-log {
+    background-color: rgb(226, 32, 42);
+    color: #FFF;
+    padding: 5px;
+    margin: 5px 0;
+}

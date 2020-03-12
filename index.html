@@ -33,16 +33,23 @@
         </div>
         <div class="panel buttons">
             <template v-if="jogoIniciado">
-                <button class="button atacar">Atacar</button>
-                <button class="button atacarForte">Atacar + Forte</button>
-                <button class="button curar">Curar</button>
-                <button class="button desistir" @click="desistir()">Desistir</button>
+                <button class="button atacar" @click="atacar(false)">Atacar</button>
+                <button class="button atacarForte" @click="atacar(true)">Atacar + Forte</button>
+                <button class="button curar" @click="heal(8,12)">Curar</button>
+                <button class="button desistir" @click="jogoIniciado = false">Desistir</button>
             </template>
             <template v-else>
                 <button class="button iniciar" @click="iniciarJogo()">Iniciar Jogo</button>
             </template>
         </div>
-        <div class="panel logs">4</div>
+        <template v-if="logs.length > 0">
+            <div class="panel logs">
+                <template v-for="log in logs">
+                    <p class="player-log">{{ log.player }}</p>
+                    <p class="monster-log">{{ log.monstro }}</p>
+                </template>
+            </div>
+        </template>
     </div>
 
 
